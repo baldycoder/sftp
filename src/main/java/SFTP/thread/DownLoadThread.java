@@ -4,7 +4,6 @@ import SFTP.config.SftpConfig;
 import SFTP.util.DruidUtil;
 import SFTP.util.FtpUtil;
 import SFTP.bean.ThreadParamBean;
-import demo2.ToolMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,9 +39,9 @@ public class DownLoadThread implements Runnable{
         this.threadParamBean = threadParamBean;
         this.ftpUtil = ftpUtil;
         this.sftpConfig = sftpConfig;
-        this.remoteFilePath = sftpConfig.getRemotePath() + "/" + dateString + "/" + threadParamBean.getFileName() + "_" + dateString + ".csv";
+        this.remoteFilePath = sftpConfig.getRemotePath() + "/" + dateString + "/" + threadParamBean.getFileName() + ".dat";
         this.localFilePath = sftpConfig.getLocalPath() + "/" + dateString;
-        this.fileName = "/" + threadParamBean.getFileName() + "_" + dateString + ".csv";
+        this.fileName = "/" + threadParamBean.getFileName() + ".dat";
         this.batchDate = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
     }
 

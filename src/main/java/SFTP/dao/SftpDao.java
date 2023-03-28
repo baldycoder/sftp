@@ -2,7 +2,6 @@ package SFTP.dao;
 
 import SFTP.bean.ThreadParamBean;
 import SFTP.util.DruidUtil;
-import demo2.ToolMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

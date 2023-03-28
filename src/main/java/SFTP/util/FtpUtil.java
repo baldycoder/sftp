@@ -255,7 +255,7 @@ public class FtpUtil {
             }
             return ftpFileNamelist;
         }catch (Exception e){
-            logger.error("遍历sftp服务器文件异常");
+            logger.info("该路径文件夹还未生成" + remotePath);
             return null;
         }finally {
             disconnect(sftp);

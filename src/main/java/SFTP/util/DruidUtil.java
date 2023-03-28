@@ -1,7 +1,6 @@
 package SFTP.util;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-import demo2.ToolMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
