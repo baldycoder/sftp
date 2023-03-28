@@ -113,7 +113,7 @@ public class ToolMain {
             result = threadParamBeans.stream()
                     .filter(bean -> finalIntersection.contains(bean.getFileName()))
                     .collect(Collectors.toList());
-            System.out.println("result = " + result);
+            logger.info("本次结果集："+ result.toString());
             for (int i = 0; i < result.size(); i++) {
                 //有待办任务，则创建线程
                 try {

@@ -4,10 +4,12 @@ import SFTP.config.SftpConfig;
 import SFTP.util.DruidUtil;
 import SFTP.util.FtpUtil;
 import SFTP.bean.ThreadParamBean;
+import demo2.ToolMain;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +33,7 @@ public class DownLoadThread implements Runnable{
     private String localFilePath;
     private String fileName;
     private Date batchDate;
+    private static final Logger logger = LoggerFactory.getLogger(DownLoadThread.class);
 
 
     public DownLoadThread(ThreadParamBean threadParamBean,FtpUtil ftpUtil,SftpConfig sftpConfig,String dateString) throws ParseException {
@@ -45,7 +48,7 @@ public class DownLoadThread implements Runnable{
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + "开始处理：" + threadParamBean.getFileName());
+        logger.info(Thread.currentThread().getName() + "开始处理：" + threadParamBean.getFileName());
         long startTime = System.nanoTime();
         Duration timeTakenToStarting = null;
 //        Connection con = null;
@@ -122,6 +125,6 @@ public class DownLoadThread implements Runnable{
 
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + "结束：" + threadParamBean.getFileName());
+        logger.info(Thread.currentThread().getName() + "结束：" + threadParamBean.getFileName());
     }
 }

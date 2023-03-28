@@ -2,6 +2,9 @@ package SFTP.dao;
 
 import SFTP.bean.ThreadParamBean;
 import SFTP.util.DruidUtil;
+import demo2.ToolMain;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +22,9 @@ import java.util.List;
  */
 
 public class SftpDao {
+
+    private static final Logger logger = LoggerFactory.getLogger(SftpDao.class);
+
     public List<ThreadParamBean> selectSftpParam(String workdate) throws SQLException {
         //获取连接
 
